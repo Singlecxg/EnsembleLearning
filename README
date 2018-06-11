@@ -1,0 +1,36 @@
+联系方式:
+姓名：陈星谷
+学号：2015011389
+班级：计51班
+邮箱：cxg15@mails.tsinghua.edu.cn
+手机：13552330980
+Kaggle：
+  User Name：cxg2015011389
+  Display Name: Glenn Davis
+
+
+脚本运行方式
+
+Usage: EnsembleLearning.py/RMSE.py [options]
+Options:
+  -h, --help            show this help message and exit
+  -e ENSEMBLE, --ensemble=ENSEMBLE
+                        ensemble learning algorithm(Bagging,AdaBoostM1,None).None表示不使用集成算法，只使用单一的分类算法
+  -c CLASSIFIER, --classifier=CLASSIFIER
+                        base classifier(SVM,DTree,KNN,NB).
+  -f FEATURES, --features=FEATURES
+                        kinds of features(content,link,all).表示使用的特征
+  -n NORMALIZE, --normalize=NORMALIZE
+                        0(no normailization),1(Normalizing,l1-norm)，2(Standardizing) 表示归一化方法
+  -T T, --T=T           整数，表示集成算法的迭代次数
+  
+  
+  例如运行：
+  python EnsembleLearning.py --ensemble=Bagging --classifier=SVM --features=all --normalize=0 --T=25
+  python EnsembleLearning.py --ensemble=Bagging --classifier=DTree --features=all --normalize=0 --T=25
+  python RMSE.py --ensemble=Bagging --classifier=SVM --features=all --normalize=0 --T=25
+
+文件说明：
+Test_predict.txt：结果输出文件
+./result目录下为不同组合下的实验结果，命名规则为：
+  EnsembleLearning_Classifier_Normalize_T_RMSE
